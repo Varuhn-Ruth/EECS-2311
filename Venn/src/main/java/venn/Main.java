@@ -7,7 +7,14 @@ public class Main {
 		System.out.println("print");
 		System.out.println("new print");
 		
-		/*test try.. */
-	}
 
+		/*test try.. */
+
+		/*
+		 * Test for pushV
+		 */
+}
+
+	
+	int x = 1;
 }
