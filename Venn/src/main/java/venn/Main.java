@@ -17,7 +17,7 @@ public class Main {
 
 		System.out.println(3 + 5 * 8 + 9);
 		int j = 2302; int eecsNum = 2311; String prof = "Tzerpos";
-		}
+		
 	/* test for push */
 	/* Test 2 - R */
 	/* Snoop Dogg */
@@ -25,7 +25,7 @@ public class Main {
 		// test for push V2
 		// test again
 
-		int x = 0;
+		
 		for(int i =0;i<5;i++) {
 			System.out.println("print");
 		}
@@ -37,4 +37,5 @@ public class Main {
 	
 	String w = "string";
  /*EECS 2311ß*/
+	boolean b = true;
 }
