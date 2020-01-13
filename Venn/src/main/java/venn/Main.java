@@ -4,6 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-System.out.println("Google");
+		int x = 5;
+		int y = 5;
+		double angleDeg = 45;
 }
 }
