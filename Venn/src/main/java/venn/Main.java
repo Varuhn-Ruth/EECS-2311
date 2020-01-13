@@ -16,9 +16,12 @@ public class Main {
 
 
 
+		boolean x = true;
+		if(x) {
+			System.out.println("print");
+		}
 		
-		
-		int x = 0;
+		int y = 0;
 		for(int i =0;i<5;i++) {
 			System.out.println("print");
 		}
