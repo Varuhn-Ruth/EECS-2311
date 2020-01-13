@@ -6,6 +6,10 @@ public class Main {
 		
 		System.out.println("print");
 		System.out.println("new print");
+		
+		/*
+		 * Test for pushV
+		 */
 	}
 
 }
