@@ -13,9 +13,18 @@ public class Main {
 		/*
 		 * Test for pushV
 		 */
-}
 
+
+
+		
+		
+		int x = 0;
+		for(int i =0;i<5;i++) {
+			System.out.println("print");
+		}
 	
-	int x = 1;
+
+	int xx = 1;
 	int y = 2;
+}
 }
