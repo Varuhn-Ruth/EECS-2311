@@ -6,6 +6,8 @@ public class Main {
 		
 		System.out.println("print");
 		System.out.println("new print");
+		
+		System.out.println("Update 1");
 	}
-
+	/* test for push */
 }
