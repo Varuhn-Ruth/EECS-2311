@@ -32,7 +32,7 @@ public class Main {
 
 	}
 
-	int xx = 1;//ygygvb
+	int xx = 1;//ygygvb /*jfsldjflsdjf*/
 	int y = 2;
 	
 	String w = "string";
