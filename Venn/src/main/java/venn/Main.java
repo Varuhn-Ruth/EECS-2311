@@ -24,6 +24,8 @@ public class Main {
 		}
 		
 		int y = 0;
+		
+		int z = 123;
 
 		int xx = 0;
 		for(int i =0;i<5;i++) {
