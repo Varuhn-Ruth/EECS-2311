@@ -39,4 +39,6 @@ public class Main {
 	
 	int j = y * y * y;
 	double k = j * j;
+	
+	String test = "Eh Wadup boi!"
 }
