@@ -25,6 +25,10 @@ public class Main {
 		
 		int y = 0;
 
+		int z = 4;
+		
+		String s = "string";
+		
 		int xx = 0;
 		for(int i =0;i<5;i++) {
 			System.out.println("print");
