@@ -37,5 +37,5 @@ public class Main {
 	
 	String w = "string";
 	
-	int j = y * y;
+	int j = y * y * y;
 }
