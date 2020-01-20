@@ -38,4 +38,5 @@ public class Main {
 	String w = "string";
 	
 	int j = y * y * y;
+	double k = j * j;
 }
