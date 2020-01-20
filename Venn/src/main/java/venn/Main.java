@@ -36,5 +36,6 @@ public class Main {
 	int y = 2;
 	
 	String w = "string";
-	//Test Again
+	
+	int j = y * y;
 }
