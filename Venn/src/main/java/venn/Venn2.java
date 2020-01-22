@@ -24,7 +24,7 @@ public class Venn2 extends JPanel implements ActionListener{
 		
 		setSize(800, 500);
 		
-		g.setColor(Color.green);
+		g.setColor(Color.red);
 		g.drawOval(50, 50, 400, 300);
 		
 //		g.setColor(Color.white);
