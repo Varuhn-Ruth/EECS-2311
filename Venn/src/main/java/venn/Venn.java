@@ -18,10 +18,10 @@ public class Venn extends JPanel {
 		
 		setSize(800, 500);
 		
-		g.setColor(Color.green);
+		g.setColor(Color.blue);
 		g.drawOval(10, 50, 400, 300);
 		
-		g.setColor(Color.orange);
+		g.setColor(Color.red);
 		g.drawOval(200, 50, 400, 300);
 	}	
 	
@@ -32,11 +32,11 @@ public class Venn extends JPanel {
 	public static void main(String[] args) {
 		JFrame MainFrame = new JFrame();
 		
-		MainFrame.setSize(750, 500);
+		MainFrame.setSize(1000, 750);
 		
-		Venn CirclePanel1 = new Venn();
+		Venn Pannel = new Venn();
 		
-		MainFrame.getContentPane().add(CirclePanel1);
+		MainFrame.getContentPane().add();
 		
 		MainFrame.setVisible(true);
 		System.out.println("trying something");
