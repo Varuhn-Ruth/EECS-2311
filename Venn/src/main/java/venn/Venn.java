@@ -1,67 +1,70 @@
-package venn;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
+import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.color.*;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import java.awt.TextField;
+import java.awt.Panel;
 
-public class Venn extends JPanel {
-	private JTextField txtLeftSide;
-	private JTextField txtSimilarities;
-	private JTextField txtRightSide;
+public class Venn extends JFrame {
 
-	public void paint(Graphics g) {
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Venn frame = new Venn();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Venn() {
+		setForeground(Color.LIGHT_GRAY);
+		setBackground(Color.GRAY);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 926, 671);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 250, 205));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		setSize(800, 500);
+		TextField textField = new TextField();
+		textField.setText("Venn App\r\n");
+		textField.setBackground(new Color(250, 250, 210));
+		textField.setBounds(404, 33, 80, 31);
+		contentPane.add(textField);
+		int x = 9;
+		Panel panel = new Panel();
+		panel.setBounds(69, 113, 764, 399);
+		contentPane.add(panel);
+		
+		
+		public  void Venn (Graphics g) {	
+		
+			setSize(800, 500);
 		
 		g.setColor(Color.red);
 		g.drawOval(10, 50, 400, 300);
 		
 		g.setColor(Color.red);
 		g.drawOval(200, 50, 400, 300);
-	}	
-	
-	/**
-	 * Create the panel.
-	 */
-	
-	public static void main(String[] args) {
-		JFrame MainFrame = new JFrame();
 		
-		MainFrame.setSize(1000, 750);
+		}
 		
-		Venn Pannel = new Venn();
-		
-		MainFrame.getContentPane().add();
-		
-		MainFrame.setVisible(true);
-		System.out.println("trying something");
-	}
-	
-	public Venn() {
-		setLayout(null);
-		
-		txtLeftSide = new JTextField();
-		txtLeftSide.setText("Left Side");
-		txtLeftSide.setBounds(135, 11, 86, 20);
-		add(txtLeftSide);
-		txtLeftSide.setColumns(10);
-		
-		txtSimilarities = new JTextField();
-		txtSimilarities.setText("Similarities");
-		txtSimilarities.setBounds(281, 11, 86, 20);
-		add(txtSimilarities);
-		txtSimilarities.setColumns(10);
-		
-		txtRightSide = new JTextField();
-		txtRightSide.setText("Right Side");
-		txtRightSide.setBounds(440, 11, 86, 20);
-		add(txtRightSide);
-		txtRightSide.setColumns(10);
-
 	}
 }
