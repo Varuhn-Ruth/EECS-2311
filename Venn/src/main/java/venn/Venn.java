@@ -39,6 +39,7 @@ public class Venn extends JPanel {
 		MainFrame.getContentPane().add(CirclePanel1);
 		
 		MainFrame.setVisible(true);
+		System.out.println("trying something");
 	}
 	
 	public Venn() {
