@@ -18,7 +18,7 @@ public class Venn extends JPanel {
 		
 		setSize(800, 500);
 		
-		g.setColor(Color.blue);
+		g.setColor(Color.red);
 		g.drawOval(10, 50, 400, 300);
 		
 		g.setColor(Color.red);
