@@ -4,9 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println("print");
-		System.out.println("new print");//jjj
+	//Removed bs
 		
+
 
 		/*test try.. *///gfgf
 		
@@ -36,7 +36,6 @@ public class Main {
 
 	int xx = 1;
 	int y = 2;
+
 	
-	String w = "string";
-	//Test Again
 }
