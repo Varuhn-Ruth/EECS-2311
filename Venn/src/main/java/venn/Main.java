@@ -24,6 +24,8 @@ public class Main {
 		}
 		
 		int y = 0;
+		
+		int z = 123;
 
 		int z = 4;
 		int w = 1;
