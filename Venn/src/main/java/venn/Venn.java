@@ -123,6 +123,7 @@ public class Main extends JPanel implements MouseListener, MouseMotionListener{
   
  }
 }
+// comment to remove error
 //>>>>>>> refs/remotes/origin/abdi
 //
 //<<<<<<< HEAD
