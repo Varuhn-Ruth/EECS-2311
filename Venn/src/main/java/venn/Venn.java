@@ -63,6 +63,8 @@ public class Venn extends JFrame {
 		
 		g.setColor(Color.red);
 		g.drawOval(200, 50, 400, 300);
+		int x = 5;
+		int y =7;
 		
 		}
 		
