@@ -43,6 +43,7 @@ public class Venn extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		// create 
+		// add
 		TextField textField = new TextField();
 		textField.setText("Venn App\r\n");
 		textField.setBackground(new Color(250, 250, 210));
