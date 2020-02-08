@@ -42,6 +42,7 @@ public class Main {
 
 	int xx = 1;
 	int y = 2;
+	int z = 2;
 	
 	String w = "string";
 	//Test Again
