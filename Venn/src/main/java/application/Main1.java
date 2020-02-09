@@ -17,17 +17,20 @@ import javafx.scene.shape.Circle;
 public class Main1 extends Application {
 	Stage window;
 	Scene scn1;
+	
 	@Override
 	public void start(Stage primaryStage) {
-		/*try {
+		
+		 {
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		} catch(Exception e) {
+		} 
+		 catch(Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		// create boarder outline 
 				Pane root = new Pane();
