@@ -27,7 +27,8 @@ public class RevTest {
 		LabelArray.addLabel(Test2, testArray.set);
 		System.out.println(testArray.set.length + " " +  testArray.set[testArray.set.length - 1].getName());
 		
-		LabelArray.
+		LabelArray.removeLabel(0);
+		System.out.println(testArray.set.length + " " +  testArray.set[testArray.set.length - 1].getName());
 	}
 
 }

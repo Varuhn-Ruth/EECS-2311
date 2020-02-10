@@ -33,16 +33,18 @@ public class LabelArray {
 
 	public static void removeLabel(int index) {
 		JLabel result[] = new JLabel[set.length - 1];
-		for (int i = 0; i < result.length; i++) {
+		for (int i = 0; i <= index; i++) {
 			String name = Integer.toString(i);
-			if (i != index) {
-				result[i] = set[i];
-			}
-				
-			
+			result[i] = set[i];
 			//Label name is the index location in this new array (result, not the set array)
 			result[i].setName(name);
-			
+		}
+		
+		for (int i = index + 1; i < result.length; i++) {
+			String name = Integer.toString(i);
+			result[i - 1] = set[i];
+			//Label name is the index location in this new array (result, not the set array)
+			result[i - 1].setName(name);
 		}
 		set = result;
 	}
