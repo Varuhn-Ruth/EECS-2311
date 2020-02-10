@@ -31,8 +31,20 @@ public class LabelArray {
 		set = result;
 	}
 
-	static void removeLabel() {
-
+	public static void removeLabel(int index) {
+		JLabel result[] = new JLabel[set.length - 1];
+		for (int i = 0; i < result.length; i++) {
+			String name = Integer.toString(i);
+			if (i != index) {
+				result[i] = set[i];
+			}
+				
+			
+			//Label name is the index location in this new array (result, not the set array)
+			result[i].setName(name);
+			
+		}
+		set = result;
 	}
 
 }
