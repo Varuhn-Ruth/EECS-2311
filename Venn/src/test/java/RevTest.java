@@ -21,11 +21,13 @@ public class RevTest {
 		LabelArray testArray = new LabelArray();
  		JLabel Test1 = new JLabel();
 		LabelArray.addLabel(Test1, testArray.set);
-		System.out.println(testArray.set.length);
+		System.out.println(testArray.set.length + " " + testArray.set[testArray.set.length - 1].getName());
 		
 		JLabel Test2 = new JLabel();
 		LabelArray.addLabel(Test2, testArray.set);
-		System.out.println(testArray.set.length);
+		System.out.println(testArray.set.length + " " +  testArray.set[testArray.set.length - 1].getName());
+		
+		
 	}
 
 }

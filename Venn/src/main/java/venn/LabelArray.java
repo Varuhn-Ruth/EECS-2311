@@ -19,6 +19,7 @@ public class LabelArray {
 		for (int i = 0; i < result.length; i++) {
 			if (i == set.length) {
 				result[i] = newLabel;
+				
 			} else {
 				result[i] = Array[i];
 			}
