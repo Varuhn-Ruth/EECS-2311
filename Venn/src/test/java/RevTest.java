@@ -8,8 +8,7 @@
  */
 import javax.*;
 import javax.swing.JLabel;
-
-import venn.RevCode;
+import venn.LabelArray;
 
 public class RevTest {
 
@@ -19,9 +18,14 @@ public class RevTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		RevCode Set = new RevCode();
+		LabelArray testArray = new LabelArray();
  		JLabel Test1 = new JLabel();
-		RevCode.addLabel(Test1, Set.title);
+		LabelArray.addLabel(Test1, testArray.set);
+		System.out.println(testArray.set.length);
+		
+		JLabel Test2 = new JLabel();
+		LabelArray.addLabel(Test2, testArray.set);
+		System.out.println(testArray.set.length);
 	}
 
 }
