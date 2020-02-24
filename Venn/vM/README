@@ -7,7 +7,12 @@ Uchechukwu Madu - 214507800
 
 This repository holds all the work that was done strictly on the course projects. This
 includes all the code that was used and modified from the startup of the project to now.
-The "Documentation" folder contains this README file along with the: "Testing Document",
-"User Manual", "Requirements Document", and all the source code that was modified and 
-used for this application. The original copy for each document and a PDF version was also
-added for easy access and usability.
+The "Documentation" folder contains the: "Testing Document", "User Manual", and
+"Requirements Document". The original .docx version of each file along with the PDF 
+version have also been added to the "Documentation" folder.
+
+This vM folder also contains the link to the runnable .jar file which is the application 
+itself.
+
+This vM folder contains an additional Implementation folder which contains all the source 
+code that was changed and modified from the startup of the project to now.
