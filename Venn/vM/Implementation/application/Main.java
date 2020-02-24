@@ -48,6 +48,7 @@ public class Main extends Application {
 	Scene scn3;
 	Scene scn2;
 	
+	//to displaysaved images
 	ImageView display = new ImageView();
 	ImageView display2 = new ImageView();
 	ImageView display3 = new ImageView();
