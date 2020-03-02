@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-public class Main extends JPanel implements MouseListener, MouseMotionListener{
+public class Venn extends JPanel implements MouseListener, MouseMotionListener{
  public final static int WIDTH = 500, HEIGHT = 500;
  private boolean triggered, pressedCancel;
  private JFrame frame;
@@ -17,7 +17,7 @@ public class Main extends JPanel implements MouseListener, MouseMotionListener{
  private int numClicks;
  private int f4;
  
- public Main() {
+ public Venn() {
   frame = new JFrame("Customizable Venn Diagram");
   frame.setSize(WIDTH, HEIGHT);
   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

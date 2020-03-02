@@ -27,7 +27,7 @@ public class Main {
 		
 		int z = 123;
 
-		int z = 4;
+		
 		
 		String s = "string";
 		
