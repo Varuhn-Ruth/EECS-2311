@@ -11,12 +11,16 @@ import javax.imageio.ImageIO;
 
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.geometry.Insets;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Blend;
@@ -25,11 +29,15 @@ import javafx.scene.effect.ColorInput;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 
@@ -38,8 +46,8 @@ public class Main extends Application {
 	
 	Stage window;
 	Scene scn1;
-	Circle cir1 =  new Circle (400,300,200, Color.rgb(255, 255, 255, 0.5));
-	Circle cir2 = new Circle (590,300,200, Color.rgb(255,255,255,0.5));
+	Circle cir1 =  new Circle (400,300,200, Color.rgb(255, 255, 255, 0.2));
+	Circle cir2 = new Circle (590,300,200, Color.rgb(255,255,255,0.2));
 	Circle cirs1 =  new Circle (410,300,150, Color.rgb(255, 255, 255, 0.5));
 	Circle cirs2 =  new Circle (560,300,150, Color.rgb(255, 255, 255, 0.5));
 	Circle cirb1 =  new Circle (360,340,250, Color.rgb(255, 255, 255, 0.5));
@@ -48,10 +56,12 @@ public class Main extends Application {
 	Scene scn3;
 	Scene scn2;
 	
-	//to displaysaved images
 	ImageView display = new ImageView();
 	ImageView display2 = new ImageView();
 	ImageView display3 = new ImageView();
+	
+	ColorPicker choose1 = new ColorPicker(); //circle left color
+	ColorPicker choose2 = new ColorPicker(); //circle right color
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -76,23 +86,17 @@ public class Main extends Application {
 				Blend blend = new Blend();
 				blend.setMode(BlendMode.MULTIPLY);
 				
-				cirb1.setStroke(Color.BLACK);
-			
+				cirb1.setStroke(Color.BLACK);			
 				cirb2.setStroke(Color.BLACK);
 				
-				ChoiceBox<String> choicebox1 = new ChoiceBox<>();
-				choicebox1.setPrefSize(75, 20);
-				choicebox1.setValue("Red");
-				choicebox1.getItems().add("Red");
-				choicebox1.getItems().add("Orange");
-				choicebox1.getItems().add("Yellow");
-				choicebox1.getItems().add("Green");
-				choicebox1.getItems().add("Blue");
-				choicebox1.getItems().add("Indigo");
-				choicebox1.getItems().add("Violet");
-				choicebox1.getItems().add("White");
-				choicebox1.setLayoutX(760);
-				choicebox1.setLayoutY(70);
+				//initialize new colorpicker utility
+				choose1.setPrefSize(100, 30);
+				choose1.setLayoutX(735);
+				choose1.setLayoutY(20);
+				
+				choose2.setPrefSize(100, 30);
+				choose2.setLayoutX(735);
+				choose2.setLayoutY(80);
 				
 				ChoiceBox<String> size1 = new ChoiceBox<>();
 				size1.setPrefSize(75, 20);
@@ -107,30 +111,6 @@ public class Main extends Application {
 				sz1.setPrefSize(80, 20);
 				sz1.setLayoutX(90);
 				sz1.setLayoutY(20);
-				
-				Button lfclr = new Button("Set Topic Two Colour");
-				lfclr.setPrefSize(150, 20);
-				lfclr.setLayoutX(840);
-				lfclr.setLayoutY(70);
-				
-				ChoiceBox<String> choicebox2 = new ChoiceBox<>();
-				choicebox2.setPrefSize(75, 20);
-				choicebox2.setValue("Red");
-				choicebox2.getItems().add("Red");
-				choicebox2.getItems().add("Orange");
-				choicebox2.getItems().add("Yellow");
-				choicebox2.getItems().add("Green");
-				choicebox2.getItems().add("Blue");
-				choicebox2.getItems().add("Indigo");
-				choicebox2.getItems().add("Violet");
-				choicebox2.getItems().add("White");
-				choicebox2.setLayoutX(760);
-				choicebox2.setLayoutY(20);
-				
-				Button rclr = new Button("Set Topic One Colour");
-				rclr.setPrefSize(150, 20);
-				rclr.setLayoutX(840);
-				rclr.setLayoutY(20);
 				
 				TextField lm1 = new TextField();
 				lm1.setPrefSize(150, 40);
@@ -705,6 +685,16 @@ public class Main extends Application {
 				sz3.setLayoutX(90);
 				sz3.setLayoutY(20);
 				
+				Button cc1 = new Button("Set Topic One Colour");
+				cc1.setPrefSize(150, 30);
+				cc1.setLayoutX(840);
+				cc1.setLayoutY(20);
+				
+				Button cc2 = new Button("Set Topic Two Colour");
+				cc2.setPrefSize(150, 30);
+				cc2.setLayoutX(840);
+				cc2.setLayoutY(80);
+				
 				//
 				
 				Button button1 = new Button("Construct Venn-Diagram!");				
@@ -818,20 +808,17 @@ public class Main extends Application {
 				root.getChildren().add(cir1);
 				root.getChildren().add(cir2);
 
-			    root.getChildren().add(choicebox1);
-			    root.getChildren().add(lfclr);
-			    root.getChildren().add(choicebox2);
-			    root.getChildren().add(rclr);
 			    root.getChildren().add(sz1);
 			    root.getChildren().add(size1);
 			    root.getChildren().addAll(lm1, lm2, lm3, lm4, lm5, lm6, lm7, lm8, lm9);
 			    root.getChildren().addAll(mm1, mm2, mm3, mm4, mm5);
 			    root.getChildren().addAll(rm1, rm2, rm3, rm4, rm5, rm6, rm7, rm8, rm9);
 			    root.getChildren().addAll(Label1, Label2, Label3, Label4);
-			    root.getChildren().add(button2);
+			    root.setEffect(blend);
+			    root.getChildren().addAll(button2, choose1, choose2, cc1, cc2);
 			    root.getChildren().addAll(capture1, display);
 			    
-			    root.setEffect(blend);
+			    
 				
 				scn = new Scene(root,1000,600);
 				scn.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -963,9 +950,9 @@ public class Main extends Application {
 				    	}
 				    });
 
-					lfclr.setOnAction(e -> getChoice(choicebox1));
-					rclr.setOnAction(e -> getChoice2(choicebox2));
-					
+					cc1.setOnAction(e -> getChoicecc1(choose1));
+					cc2.setOnAction(e -> getChoicecc2(choose2));
+				
 					rs.setOnAction(e -> getChoice3(choicebox3));
 					ls.setOnAction(e -> getChoice4(choicebox4));
 					sz1.setOnAction(e -> changeSize(size1));					
@@ -974,74 +961,32 @@ public class Main extends Application {
 					rb.setOnAction(e -> getChoice5(choicebox5));
 					lb.setOnAction(e -> getChoice6(choicebox6));
 					sz3.setOnAction(e -> changeSizeB(size3));
-	
+					
 					layout1.getChildren().addAll(label1, t1, textfield1, t2, textfield2, t3, textfield3, button1);
 					scn1 = new Scene(layout1, 400, 400);
 				
 					window.setScene(scn1);
 					window.show();
 				}
-				
 
-			
-				
-				
-
-	private void getChoice2(ChoiceBox<String> choicebox1) {
-		String color = choicebox1.getValue();
-		if(color == "Red") {
-			cir1.setFill(Color.rgb(255,0,0, 0.5));
-		}
-		if(color == "Orange") {
-			cir1.setFill(Color.rgb(255,165,0, 0.5));
-		}
-		if(color == "Yellow") {
-			cir1.setFill(Color.rgb(255,255,0, 0.5));
-		}
-		if(color == "Green") {
-			cir1.setFill(Color.rgb(0,255,0, 0.5));
-		}
-		if(color == "Blue") {
-			cir1.setFill(Color.rgb(0,0,255, 0.5));
-		}
-		if(color == "Indigo") {
-			cir1.setFill(Color.rgb(75,0,130, 0.5));
-		}
-		if(color == "Violet") {
-			cir1.setFill(Color.rgb(128,0,128, 0.5));
-		}
-		if(color == "White") {
-			cir1.setFill(Color.rgb(255,255,255, 0.5));
-		}
-	}		
 	
-	private void getChoice(ChoiceBox<String> choicebox2) {
-		String color = choicebox2.getValue();
-		if(color == "Red") {
-			cir2.setFill(Color.rgb(255,0,0, 0.5));
+	private void getChoicecc1(ColorPicker choose1) {
+		Color color = choose1.getValue();
+		if(color != null) {
+			cir1.setFill(color.deriveColor(1, 1, 1, 0.5));
 		}
-		if(color == "Orange") {
-			cir2.setFill(Color.rgb(255,165,0, 0.5));
+		
+	}
+	
+	private void getChoicecc2(ColorPicker choose2) {
+		Color color = choose2.getValue();
+		if(color != null) {
+			cir2.setFill(color.deriveColor(1, 1, 1, 0.5));
 		}
-		if(color == "Yellow") {
-			cir2.setFill(Color.rgb(255,255,0, 0.5));
-		}
-		if(color == "Green") {
-			cir2.setFill(Color.rgb(0,255,0, 0.5));
-		}
-		if(color == "Blue") {
-			cir2.setFill(Color.rgb(0,0,255, 0.5));
-		}
-		if(color == "Indigo") {
-			cir2.setFill(Color.rgb(75,0,130, 0.5));
-		}
-		if(color == "Violet") {
-			cir2.setFill(Color.rgb(128,0,128, 0.5));
-		}
-		if(color == "White") {
-			cir2.setFill(Color.rgb(255,255,255, 0.5));
-		}
-	}			
+		
+	}
+				
+	
 	
 	private void getChoice3(ChoiceBox<String> choicebox3) {
 		String color = choicebox3.getValue();
