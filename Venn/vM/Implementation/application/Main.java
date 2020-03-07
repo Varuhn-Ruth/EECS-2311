@@ -16,18 +16,21 @@ import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorInput;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -46,8 +49,8 @@ public class Main extends Application {
 	
 	Stage window;
 	Scene scn1;
-	Circle cir1 =  new Circle (400,300,200, Color.rgb(255, 255, 255, 0.2));
-	Circle cir2 = new Circle (590,300,200, Color.rgb(255,255,255,0.2));
+	Circle cir1 =  new Circle (400,340,200, Color.rgb(255, 255, 255, 0.2));
+	Circle cir2 = new Circle (590,340,200, Color.rgb(255,255,255,0.2));
 	Circle cirs1 =  new Circle (410,300,150, Color.rgb(255, 255, 255, 0.5));
 	Circle cirs2 =  new Circle (560,300,150, Color.rgb(255, 255, 255, 0.5));
 	Circle cirb1 =  new Circle (360,340,250, Color.rgb(255, 255, 255, 0.5));
@@ -62,6 +65,8 @@ public class Main extends Application {
 	
 	ColorPicker choose1 = new ColorPicker(); //circle left color
 	ColorPicker choose2 = new ColorPicker(); //circle right color
+	
+	Slider slider = new Slider();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -96,20 +101,41 @@ public class Main extends Application {
 				
 				choose2.setPrefSize(100, 30);
 				choose2.setLayoutX(735);
-				choose2.setLayoutY(80);
+				choose2.setLayoutY(60);				
+				 
+			    for(int i = 0; i < 50; i++) {
+					TextField insert = new TextField();
+					insert.setPrefSize(170, 50);
+					insert.setLayoutX(100);
+					insert.setLayoutY(100);
+					insert.setBackground(null);
+					insert.setText("o ");
+					insert.setOnMouseDragged(event -> drag(event));
+					root.getChildren().add(i, insert);
+					
+				}
+			    
+			    slider.setPrefSize(150, 30);
+			    slider.setLayoutX(10);
+			    slider.setLayoutY(20);
+			    slider.setMax(250);
+			    slider.setMin(150);
+			    slider.setShowTickLabels(true);
+			    
+			    //
 				
-				ChoiceBox<String> size1 = new ChoiceBox<>();
-				size1.setPrefSize(75, 20);
-				size1.setValue("Medium");
-				size1.getItems().add("Small");
-				size1.getItems().add("Medium");
-				size1.getItems().add("Large");
-				size1.setLayoutX(10);
-				size1.setLayoutY(20);
+//				ChoiceBox<String> size1 = new ChoiceBox<>();
+//				size1.setPrefSize(75, 20);
+//				size1.setValue("Medium");
+//				size1.getItems().add("Small");
+//				size1.getItems().add("Medium");
+//				size1.getItems().add("Large");
+//				size1.setLayoutX(10);
+//				size1.setLayoutY(20);
 				
 				Button sz1 = new Button("Set Size");
 				sz1.setPrefSize(80, 20);
-				sz1.setLayoutX(90);
+				sz1.setLayoutX(180);
 				sz1.setLayoutY(20);
 				
 				TextField lm1 = new TextField();
@@ -693,7 +719,7 @@ public class Main extends Application {
 				Button cc2 = new Button("Set Topic Two Colour");
 				cc2.setPrefSize(150, 30);
 				cc2.setLayoutX(840);
-				cc2.setLayoutY(80);
+				cc2.setLayoutY(60);
 				
 				//
 				
@@ -711,17 +737,17 @@ public class Main extends Application {
 				
 				Label Label1 = new Label("Topic 1");
 				Label1.setLayoutX(340);
-				Label1.setLayoutY(80);
+				Label1.setLayoutY(65);
 				Label1.setFont(font);
 				
 				Label Label2 = new Label("Topic 2");
 				Label2.setLayoutX(600);
-				Label2.setLayoutY(80);
+				Label2.setLayoutY(65);
 				Label2.setFont(font);
 				
 				Label Label3 = new Label("Similarities");
-				Label3.setLayoutX(460);
-				Label3.setLayoutY(80);
+				Label3.setLayoutX(450);
+				Label3.setLayoutY(70);
 				Label3.setFont(font);
 				
 				Label Labels1 = new Label("Topic 1");
@@ -809,13 +835,13 @@ public class Main extends Application {
 				root.getChildren().add(cir2);
 
 			    root.getChildren().add(sz1);
-			    root.getChildren().add(size1);
+//			    root.getChildren().add(size1);
 			    root.getChildren().addAll(lm1, lm2, lm3, lm4, lm5, lm6, lm7, lm8, lm9);
 			    root.getChildren().addAll(mm1, mm2, mm3, mm4, mm5);
 			    root.getChildren().addAll(rm1, rm2, rm3, rm4, rm5, rm6, rm7, rm8, rm9);
 			    root.getChildren().addAll(Label1, Label2, Label3, Label4);
 			    root.setEffect(blend);
-			    root.getChildren().addAll(button2, choose1, choose2, cc1, cc2);
+			    root.getChildren().addAll(button2, choose1, choose2, cc1, cc2, slider);
 			    root.getChildren().addAll(capture1, display);
 			    
 			    
@@ -829,14 +855,14 @@ public class Main extends Application {
 				
 				scn2 = new Scene(root2,1000,600);
 				scn2.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				primaryStage.setTitle("venn Diagram");
+				primaryStage.setTitle("Venn Diagram");
 				scn2.setFill(Color.WHEAT);
 				primaryStage.setScene(scn2);
 				primaryStage.show();
 				
 				scn3 = new Scene(root3,1000,600);
 				scn3.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-				primaryStage.setTitle("venn Diagram");
+				primaryStage.setTitle("Venn Diagram");
 				scn3.setFill(Color.WHEAT);
 				primaryStage.setScene(scn3);
 				primaryStage.show();
@@ -955,7 +981,7 @@ public class Main extends Application {
 				
 					rs.setOnAction(e -> getChoice3(choicebox3));
 					ls.setOnAction(e -> getChoice4(choicebox4));
-					sz1.setOnAction(e -> changeSize(size1));					
+					sz1.setOnAction(e -> changeSize(slider));					
 					sz2.setOnAction(e -> changeSizeS(size2));
 					
 					rb.setOnAction(e -> getChoice5(choicebox5));
@@ -970,6 +996,14 @@ public class Main extends Application {
 				}
 
 	
+	private void drag(MouseEvent event) {
+		Node n = (Node)event.getSource();
+		n.setTranslateX(n.getTranslateX() + event.getX());
+		n.setTranslateY(n.getTranslateY() + event.getY());
+		
+	}
+
+
 	private void getChoicecc1(ColorPicker choose1) {
 		Color color = choose1.getValue();
 		if(color != null) {
@@ -1044,15 +1078,12 @@ public class Main extends Application {
 		}
 	}			
 	
-	private void changeSize(ChoiceBox<String> size1) {
-		String size = size1.getValue();
+	private void changeSize(Slider slider) {
+		double size = slider.getValue();
 		
-		if(size == "Small") {
-			window.setScene(scn3);
-		}
-		
-		if(size == "Large") {
-			window.setScene(scn2);
+		if(size != 0) {
+			cir1.setRadius(size);
+			cir2.setRadius(size);
 		}
 	}
 	
