@@ -55,6 +55,21 @@ public class Main extends Application {
 	Scene scn;
 	Scene scn3;
 	Scene scn2;
+
+	Label Label1 = new Label("Topic 1");
+	Label Label2 = new Label("Topic 2");
+	Label Label4 = new Label("SET TITLE");
+	Label Label3 = new Label("Similarities");
+	
+	Font font = new Font("Arial", 16);
+	Font font2 = new Font("Arial", 30);
+	Font font3 = new Font("Verdana", 16);
+	Font font5 = new Font("Calibri", 16);
+	Font font6 = new Font("Times New Roman", 16);
+	Font font7 = new Font("Verdana", 30);
+	Font font8 = new Font("Calibri", 30);
+	Font font9 = new Font("Times New Roman", 30);
+	
 	
 	ImageView display = new ImageView();
 	ImageView display2 = new ImageView();
@@ -62,16 +77,22 @@ public class Main extends Application {
 	
 	ColorPicker choose1 = new ColorPicker(); //circle left color
 	ColorPicker choose2 = new ColorPicker(); //circle right color
+	ColorPicker choose3 = new ColorPicker();
 	
 	Slider slider = new Slider();
+	Slider slider2 = new Slider();
+	Slider slider3 = new Slider();
 	
 	@Override
 	public void start(Stage primaryStage) {
 		
 		// create boarder outline 
 		TextField textfield1 = new TextField();
+		textfield1.setPromptText("Enter Title of First Topic");
 		TextField textfield2 = new TextField();
+		textfield2.setPromptText("Enter Title of Second Topic");
 		TextField textfield3 = new TextField();
+		textfield3.setPromptText("Enter Title");
 		
 		
 		
@@ -96,14 +117,19 @@ public class Main extends Application {
 				
 				choose2.setPrefSize(100, 30);
 				choose2.setLayoutX(735);
-				choose2.setLayoutY(60);				
+				choose2.setLayoutY(60);		
+				
+				choose3.setPrefSize(100, 30);
+				choose3.setLayoutX(735);
+				choose3.setLayoutY(100);		
 				 
 			    for(int i = 0; i < 50; i++) {
 					TextField insert = new TextField();
 					insert.setPrefSize(170, 50);
-					insert.setLayoutX(10);
-					insert.setLayoutY(100);	
-					insert.setText("o ");
+					insert.setLayoutX(820);
+					insert.setLayoutY(140);	
+//					insert.setText("o ");
+					insert.setPromptText("o Enter what you want to say");					
 					insert.setOnMouseDragged(event -> drag(event));
 					insert.setOnMouseReleased(event -> released(event));
 					
@@ -114,10 +140,24 @@ public class Main extends Application {
 			    
 			    slider.setPrefSize(150, 30);
 			    slider.setLayoutX(10);
-			    slider.setLayoutY(20);
+			    slider.setLayoutY(5);
 			    slider.setMax(250);
 			    slider.setMin(150);
 			    slider.setShowTickLabels(true);
+			    
+			    slider2.setPrefSize(150, 30);
+			    slider2.setLayoutX(10);
+			    slider2.setLayoutY(45);
+			    slider2.setMax(40);
+			    slider2.setMin(15);
+			    slider2.setShowTickLabels(true);
+			    
+			    slider3.setPrefSize(150, 30);
+			    slider3.setLayoutX(10);
+			    slider3.setLayoutY(85);
+			    slider3.setMax(30);
+			    slider3.setMin(15);
+			    slider3.setShowTickLabels(true);
 			    
 			    //
 				
@@ -125,7 +165,17 @@ public class Main extends Application {
 				Button sz1 = new Button("Set Size");
 				sz1.setPrefSize(80, 20);
 				sz1.setLayoutX(180);
-				sz1.setLayoutY(20);
+				sz1.setLayoutY(5);
+				
+				Button Tfont = new Button("Set Title Font Size");
+				Tfont.setPrefSize(120, 20);
+				Tfont.setLayoutX(180);
+				Tfont.setLayoutY(40);
+				
+				Button Tfont1 = new Button("Set Topic Font Size");
+				Tfont1.setPrefSize(120, 20);
+				Tfont1.setLayoutX(180);
+				Tfont1.setLayoutY(80);
 
 //				new line
 				
@@ -437,23 +487,24 @@ public class Main extends Application {
 				rs.setLayoutY(20);
 				
 				ChoiceBox<String> choicebox3 = new ChoiceBox<>();
-				choicebox3.setPrefSize(100, 20);
-				choicebox3.setValue("Times New Roman");
-				choicebox3.getItems().add("Verdana");
-				choicebox3.getItems().add("Times New Roman");
+				choicebox3.setPrefSize(100, 55);
+				choicebox3.setValue("Arial");
 				choicebox3.getItems().add("Arial");
-				choicebox3.getItems().add("Arial Black");
 				choicebox3.getItems().add("Calibri");
-//				choicebox3.getItems().add("Indigo");
-//				choicebox3.getItems().add("Violet");
-//				choicebox3.getItems().add("White");
+				choicebox3.getItems().add("Times New Roman");
+				choicebox3.getItems().add("Verdana");
 				choicebox3.setLayoutX(10);
-				choicebox3.setLayoutY(400);
+				choicebox3.setLayoutY(530);
 				
-				Button changefont = new Button("Set font");
-				changefont.setPrefSize(100, 20);
+				Button changefont = new Button("Set Topics font");
+				changefont.setPrefSize(140, 20);
 				changefont.setLayoutX(120);
-				changefont.setLayoutY(400);
+				changefont.setLayoutY(530);
+				
+				Button changefont2 = new Button("Set Title font");
+				changefont2.setPrefSize(140, 20);
+				changefont2.setLayoutX(120);
+				changefont2.setLayoutY(560);
 				
 				Button ls = new Button("Set Topic Two Colour");
 				ls.setPrefSize(150, 20);
@@ -550,6 +601,11 @@ public class Main extends Application {
 				cc2.setLayoutX(840);
 				cc2.setLayoutY(60);
 				
+				Button cc3 = new Button("Set Font Colours");
+				cc3.setPrefSize(150, 30);
+				cc3.setLayoutX(840);
+				cc3.setLayoutY(100);
+				
 				//
 				
 				Button button1 = new Button("Construct Venn-Diagram!");				
@@ -557,24 +613,18 @@ public class Main extends Application {
 				Button button3 = new Button("Change Titles");
 				Button button4 = new Button("Change Titles");
 				
-				Button capture1 = new Button("Save Screen");
+				Button capture1 = new Button("Export");
 				Button capture2 = new Button("Save Screen");
 				Button capture3 = new Button("Save Screen");
 				
-				Font font = new Font("Arial", 16);
-				Font font2 = new Font("Arial", 30);
-				
-				Label Label1 = new Label("Topic 1");
 				Label1.setLayoutX(340);
 				Label1.setLayoutY(65);
 				Label1.setFont(font);
 				
-				Label Label2 = new Label("Topic 2");
 				Label2.setLayoutX(600);
 				Label2.setLayoutY(65);
 				Label2.setFont(font);
 				
-				Label Label3 = new Label("Similarities");
 				Label3.setLayoutX(450);
 				Label3.setLayoutY(70);
 				Label3.setFont(font);
@@ -584,10 +634,9 @@ public class Main extends Application {
 				Labels1.setLayoutY(120);
 				Labels1.setFont(font);
 				
-				Label Labels2 = new Label("Topic 2");
-				Labels2.setLayoutX(580);
-				Labels2.setLayoutY(120);
-				Labels2.setFont(font);
+//				Labels2.setLayoutX(580);
+//				Labels2.setLayoutY(120);
+//				Labels2.setFont(font);
 				
 				Label Labels3 = new Label("Similarities");
 				Labels3.setLayoutX(440);
@@ -598,8 +647,7 @@ public class Main extends Application {
 				Labelb3.setLayoutX(440);
 				Labelb3.setLayoutY(80);
 				Labelb3.setFont(font);
-				
-				Label Label4 = new Label("SET TITLE");
+								
 				Label4.setLayoutX(350);
 				Label4.setLayoutY(20);
 				Label4.setFont(font2);
@@ -664,9 +712,9 @@ public class Main extends Application {
 				root.getChildren().add(cir2);
 
 			    root.getChildren().add(sz1);
-			    root.getChildren().addAll(Label1, Label2, Label3, Label4, choicebox3, changefont);
+			    root.getChildren().addAll(Label1, Label2, Label3, Label4, choicebox3, changefont, changefont2);
 			    root.setEffect(blend);
-			    root.getChildren().addAll(button2, choose1, choose2, cc1, cc2, slider);
+			    root.getChildren().addAll(button2, choose1, choose2, choose3, cc1, cc2, cc3, slider, slider2, Tfont, slider3, Tfont1);
 			    root.getChildren().addAll(capture1, display);
 			    			
 				scn = new Scene(root,1000,600);
@@ -711,7 +759,7 @@ public class Main extends Application {
 				root3.getChildren().add(sz2);
 				root3.getChildren().add(Labels);
 				root3.getChildren().add(button4);
-				root3.getChildren().addAll(Labels3, Labels1, Labels2);
+//				root3.getChildren().addAll(Labels3, Labels1, Labels2);
 				root3.getChildren().addAll(ls1, ls2, ls3, ls4, ls5, rs1, rs2, rs3, rs4, rs5, ms1, ms2, ms3);
 				root3.getChildren().addAll(capture3, display3);
 
@@ -746,7 +794,7 @@ public class Main extends Application {
 				    	Labels1.setText(s1);
 				    	
 				    	String s2 = String.valueOf(textfield2.getText());
-				    	Labels2.setText(s2);
+//				    	Labels2.setText(s2);
 				    	});
 				    
 				    button2.setOnAction(e -> window.setScene(scn1));
@@ -797,9 +845,14 @@ public class Main extends Application {
 
 					cc1.setOnAction(e -> getChoicecc1(choose1));
 					cc2.setOnAction(e -> getChoicecc2(choose2));
+					cc3.setOnAction(e -> getChoicecc3(choose3));
 					changefont.setOnAction(e -> getFont(choicebox3));
+					changefont2.setOnAction(e -> getFont1(choicebox3));
 				
-					sz1.setOnAction(e -> changeSize(slider));					
+					sz1.setOnAction(e -> changeSize(slider));			
+					Tfont.setOnAction(e -> changeSize2(slider2));
+					Tfont1.setOnAction(e -> changeSize3(slider3));
+					
 					sz2.setOnAction(e -> changeSizeS(size2));
 					
 					sz3.setOnAction(e -> changeSizeB(size3));
@@ -811,7 +864,6 @@ public class Main extends Application {
 					window.show();
 				}
 
-	
 	private void released(MouseEvent event) {
 		TextField t = (TextField)event.getSource();
 		t.setBackground(null);
@@ -842,11 +894,57 @@ public class Main extends Application {
 		
 	}
 	
+	private void getChoicecc3(ColorPicker choose3) {
+		Color color = choose3.getValue();
+		if(color != null) {
+			Label4.setTextFill(color);
+			Label1.setTextFill(color);
+			Label2.setTextFill(color);
+			Label3.setTextFill(color);
+		}		
+	}
+	
 	private void getFont(ChoiceBox<String> choicebox3) {
 		String font = choicebox3.getValue();
 		
+		if(font == "Arial") {
+			Label1.setFont(this.font);
+			Label2.setFont(this.font);
+		}
+		
+		if(font == "Times New Roman") {
+			Label1.setFont(this.font6);
+			Label2.setFont(this.font6);
+		}
+		
 		if(font == "Verdana") {
-//			insert.setFont()
+			Label1.setFont(this.font3);
+			Label2.setFont(this.font3);
+		}
+		
+		if(font == "Calibri") {
+			Label1.setFont(this.font5);
+			Label2.setFont(this.font5);
+		}
+	}
+	
+	private void getFont1(ChoiceBox<String> choicebox3) {
+		String font = choicebox3.getValue();
+		
+		if(font == "Arial") {
+			Label4.setFont(this.font2);
+		}
+		
+		if(font == "Times New Roman") {
+			Label4.setFont(this.font9);
+		}
+		
+		if(font == "Verdana") {
+			Label4.setFont(this.font7);
+		}
+		
+		if(font == "Calibri") {
+			Label4.setFont(this.font8);
 		}
 	}
 				
@@ -857,6 +955,23 @@ public class Main extends Application {
 		if(size != 0) {
 			cir1.setRadius(size);
 			cir2.setRadius(size);
+		}
+	}
+	
+	private void changeSize2(Slider slider) {
+		Font font = new Font(slider2.getValue());
+		
+		if(font != null) {
+			Label4.setFont(font);
+		}
+	}
+	
+	private void changeSize3(Slider slider) {
+		Font font = new Font(slider3.getValue());
+		
+		if(font != null) {
+			Label2.setFont(font);
+			Label1.setFont(font);
 		}
 	}
 	
