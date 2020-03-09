@@ -1,72 +1,61 @@
 package application;
 
-import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 
 public class MainTester {
-
 	
-	private Main colour;
-	private Main size;
+//	private FXMLController controller;
+	private TextField textt;
+	private Circle circle;
 	
 	@BeforeEach
-	public void setup() throws Exception {
-		colour = new Main();
+	public void setUp() throws Exception {
+		circle = new Circle();
+		circle.setFill(null);
+		circle.setRadius(200);
 	}
 	
 	@Test
-	public void testgetChoice() {
-		String expectedColor = "Red";
-		assertEquals(expectedColor, colour.getChoice1(<choicebox1>, colour));
+	public void TestColour() {
+		Paint c = circle.getFill();
+		
+		assertEquals(null, c.NoColor());
 	}
 	
 	@Test
-	public void testgetChoice2() {
-		String expectedColor = "Orange";
-		assertEquals(expectedColor, colour.getChoice2(<choicebox2>, colour));
+	public void TestColourFill() {
+		circle.setFill(Color.BLUE);
+		Paint c = circle.getFill();
+		asserEquals(Color.BLUE, c.SetColor());
 	}
 	
 	@Test
-	public void testgetChoice3() {
-		String expectedColor = "Yellow";
-		assertEquals(expectedColor, colour.getChoice3(<choicebox3>, colour));
+	public void CircleDefaultSize() {
+		assertEquals(200, circle.getSizeDefault());
 	}
 	
 	@Test
-	public void testgetChoice4() {
-		String expectedColor = "Blue";
-		assertEquals(expectedColor, colour.getChoice4(<choicebox4>, colour));
+	public void ChangeCircleSize() {
+		circle.setRadius(250);
+		assertEquals(250, circle.ChangeSizeDefault());
 	}
 	
 	@Test
-	public void testgetChoice5() {
-		String expectedColor = "Indigo";
-		assertEquals(expectedColor, colour.getChoice5(<choicebox5>, colour));
+	public void TestText() {
+		assertEquals(null, textt.TestTextEmpty());
 	}
 	
 	@Test
-	public void testgetChoice6() {
-		String expectedColor = "Violet";
-		assertEquals(expectedColor, colour.getChoice6(<choicebox6>, colour));
-	}
-	
-	@Test
-	public void changeSize() {
-		String expectedColor = "Large";
-		assertEquals(expectedColor, size.changeSize(<size1>, size));
-	}
-	
-	@Test
-	public void changeSize2() {
-		String expectedColor = "Medium";
-		assertEquals(expectedColor, size.changeSize2(<size2>, size));
-	}
-	
-	@Test
-	public void changeSize3() {
-		String expectedColor = "Small";
-		assertEquals(expectedColor, size.changeSize3(<size3>, size));
-	}
-	
+	public void TestTextFill() {
+		textt.setText("New Text");
+		assertEquals("New Text", textt.addText());
+	}	
 	
 }
