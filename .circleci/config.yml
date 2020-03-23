@@ -46,9 +46,9 @@ jobs:
           name: "Build and Publish Release on GitHub"
           command: |
             NOW="$(date)" 
-            ZIP_FILE_NAME=CounterCI
+            ZIP_FILE_NAME=Venn
             TAG=Release-$(date '+%Y-%m-%d-%H-%M-%S')
-            cd CounterCI
+            cd Venn
             gradle jar
             cd ./build/libs/
             zip ${ZIP_FILE_NAME}.zip Venn.jar 
