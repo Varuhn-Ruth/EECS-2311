@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Graphics;
@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.TextField;
 import java.awt.Panel;
-=======
+
 package venn;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
