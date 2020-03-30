@@ -60,7 +60,7 @@ workflows:
       - build:
           filters:
             branches:
-              only: master 
+              only: Midterm_repository
 © 2020 GitHub, Inc.
 Terms
 Privacy
