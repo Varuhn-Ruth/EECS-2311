@@ -3,11 +3,10 @@ package venn;
 public class Main {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
+
 
 	}
-=======
-		
+
 	//Removed bs
 		
 
@@ -46,5 +45,5 @@ public class Main {
 	int z = 1
 
 	
->>>>>>> branch 'master' of https://github.com/Ruthirakuhan-Varuhn-215634140/EECS-2311.git
+
 }
