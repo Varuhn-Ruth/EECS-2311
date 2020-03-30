@@ -36,6 +36,7 @@ public class Main1 extends Application {
 				Pane root = new Pane();
 				
 				//add circles and buttons coordinates x,y,r 
+				// test
 				Circle cir1 =  new Circle (450,300,100);
 				Circle cir2 = new Circle (550,300,100);
 				Button btn1 = new Button ();

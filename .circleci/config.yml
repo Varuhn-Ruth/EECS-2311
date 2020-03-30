@@ -60,4 +60,6 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+
+              only: Midterm_repository
+
