@@ -28,10 +28,6 @@ public class Main1 extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} 
-		 catch(Exception e) {
-			e.printStackTrace();
-		}
-		
 		// create boarder outline 
 				Pane root = new Pane();
 				
